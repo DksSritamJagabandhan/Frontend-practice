@@ -7,7 +7,8 @@ tinderUser.isLoggedIn= true
 
 // console.log(tinderUser)
 // console.log(Object.keys(tinderUser)) // print all the keys in array
-
+// console.log(Object.values(tinderUser))
+// console.log(Object.entries(tinderUser))
 
 const regularUser={
     email:"sushil@gmail.com",

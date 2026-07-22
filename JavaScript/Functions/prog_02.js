@@ -19,7 +19,7 @@ function handleObject(anyObject){
 }
 handleObject(user)
 
-// Array as argument
+// Array as an argument
 const newArray = [200,300,400,500]
 function returnSecondValue(arr){
     return arr[3]

@@ -2,21 +2,21 @@
 
 //declaration
 const arr = [3, 8, 9, 10, 22, 83, 69]
-// const arr2= new Array(3,3,5,6,7,21,72)
-// console.log(arr) //[ 3,8,9,10,22,83,69]
-// console.log(arr[4])
+const arr2= new Array(3,3,5,6,7,21,72)
+console.log(arr) //[ 3,8,9,10,22,83,69]
+console.log(arr[4])
 
-// //methods
-// arr.push(81) //add value in last
-// arr.pop() //remove last value
-// arr.unshift(9) //add value in first but not optimize
-// arr.shift() //remove first value
+//methods
+arr.push(81) //add value in last
+arr.pop() //remove last value
+arr.unshift(9) //add value in first but not optimize
+arr.shift() //remove first value
 
-// console.log(arr.includes(10)) //false/true
-// console.log(arr.indexOf(69)) //6
+console.log(arr.includes(10)) //false/true
+console.log(arr.indexOf(69)) //6
 
-// const newArr = arr.join()
-// console.log(newArr) //3,8,9,10,22,83,69
+const newArr = arr.join()
+console.log(newArr) //3,8,9,10,22,83,69
 
 console.log("A", arr) //A [3,  8,  9, 10,22, 83, 69]
 const arra = arr.slice(1, 4)

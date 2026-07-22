@@ -32,4 +32,3 @@ jsUser.greeting_two=function(){
     console.log(`Hello ${this.name}`)
 }
 console.log(jsUser.greeting_two())
-

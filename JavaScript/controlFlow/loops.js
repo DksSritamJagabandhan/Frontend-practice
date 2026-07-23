@@ -51,27 +51,71 @@
 
 // // for of 
 
-const arr = [1,2,3,4,5]
+// const arr = [1,2,3,4,5]
 
-for (const item of arr) {
+// for (const item of arr) {
+//     console.log(item)
+// }
+
+// for (const key in arr) {
+//     console.log(arr[key])
+// }
+
+// const greetings = "Hello world"
+// for (const greet of greetings) {
+//     console.log(`Each char id ${greet}`)
+// }
+
+// for in
+
+const obj = {
+    js : "javascript",
+    cpp : "c++",
+    rb : "rubby",
+    swift : "swift by apple"
+}
+
+for (const key in obj) {
+    console.log(`${key} is shortcut for ${obj[key]}`)
+}
+
+// for each
+
+const coding = ["js", "java","python","c++"]
+
+coding.forEach( function (val){
+    console.log(val)
+})
+
+coding.forEach((val) => {
+    console.log(val)
+});
+
+function printMe(item){
     console.log(item)
 }
+coding.forEach(printMe)
 
-const greetings = "Hello world"
-for (const greet of greetings) {
-    console.log(`Each char id ${greet}`)
-}
+coding.forEach((item,index,arr)=>{
+    console.log(item,index,arr)
+})
 
-// Maps
 
-const map = new Map()
-map.set('IN','India')
-map.set('US','United state')
-map.set('ENG','England')
-map.set('SAF','South africa')
-console.log(map)
+const myCoding = [
+    {
+        language : "JAVA",
+        extension : ".java"
+    },
+    {
+        language : "PYTHON",
+        extension : ".py"
+    },
+    {
+        language : "JAVASCRIPT",
+        extension : ".js"
+    }
+]
 
-for (const [key, value] of map) {
-    console.log(key,'-->',value)
-}
-
+myCoding.forEach((item)=>{
+    console.log(item.language)
+})

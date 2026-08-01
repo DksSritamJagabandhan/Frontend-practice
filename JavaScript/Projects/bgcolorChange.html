@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background color change</title>
+    <style>
+        .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e24;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+        body{
+            background-color: aqua;
+            text-align: center;
+        }
+
+        /* Styling for all color buttons */
+        .button {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            /* Makes the button round */
+            border: 2px solid #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            /* Adds a subtle shadow */
+            cursor: pointer;
+            margin: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Hover effect */
+        .button:hover {
+            transform: scale(1.1);
+            /* Slightly enlarges on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Click / Active effect */
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        /* Specific color assignments */
+        #orange {
+            background-color: orange;
+
+        }
+        #white {
+            background-color: white;
+
+        }
+        #red {
+            background-color: red;
+
+        }
+        #yellow {
+            background-color: yellow;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <nav class="navbar">
+        <ul>
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/" target="_blank">About</a></li>
+        </ul>
+    </nav> -->
+    <div class="canvas">
+        <h1>Color Schemes Switcher</h1>
+        <span class="button" id="orange"></span>
+        <span class="button" id="white"></span>
+        <span class="button" id="red"></span>
+        <span class="button" id="yellow"></span>
+        <h2>Click one of the above color to change the background color</h2>
+    </div>
+</body>
+<script>
+    const buttons = document.querySelectorAll('.button')
+    const body = document.querySelector('body')
+
+    buttons.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            if (e.target.id === 'orange') {
+                body.style.backgroundColor = e.target.id
+            }
+            if (e.target.id === 'white') {
+                body.style.backgroundColor = e.target.id
+            }
+            if (e.target.id === 'red') {
+                body.style.backgroundColor = e.target.id
+            }
+            if (e.target.id === 'yellow') {
+                body.style.backgroundColor = e.target.id
+            }
+        })
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <div class="container">
+        <ul id="images">
+            <li><img id="one" width="100px" src="d:\My data\ROHAN PIC.jpeg" alt="photo"></li>
+            <li><img id="two" width="100px" src="d:\My data\ROHAN PIC.jpeg" alt=""></li>
+            <li><img id="three" width="100px" src="d:\My data\ROHAN PIC.jpeg" alt=""></li>
+            <li><img id="four" width="100px" src="d:\My data\ROHAN PIC.jpeg" alt=""></li>
+            <a href="www.google.com">click here</a>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('three').onclick = funvtion(){
+    //     alert("Three number picture")
+    // }
+
+    // document.getElementById('three').addEventListener('click', function(){
+    //     alert("Three number picture")
+    // })
+
+    // document.getElementById('three').addEventListener('click', function(e){
+    //     console.log(e)
+    //     e.stopPropagation()
+    // },false)
+
+    // document.getElementById('link').getElementById('click' , function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     e.stopPropagation()
+    //     console.log('B')
+        
+    // }, false)
+
+    // 
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        if (e.target.tagName === 'IMG') {
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+</script>
+</html>

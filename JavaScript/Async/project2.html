@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeInterval project</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: aliceblue;
+        }
+        #start{
+            background-color: rgb(0, 255, 0);
+        }
+        #stop{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome...</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <h3 id="h3"></h3>
+</body>
+<script>
+    const repeat = document.querySelector('#h3') 
+    document.querySelector('#start').addEventListener('click',function(){
+        setInterval(function(){
+            console.log("Rohan")
+        },1000)
+    })
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(setInterval(function(){
+            console.log("Rohan")
+        },1000))
+    })
+    // const saydate = function(str){
+    //     console.log(str, Date.now())
+    // }
+    // const intervalId = setInterval( saydate , 1000, "ROHAN")
+    // clearInterval(intervalId)
+</script>
+</html>

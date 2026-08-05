@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg colour change project</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+        nav{
+            text-align: center;
+        }
+        a{
+            padding: 5px;
+            margin: 5px;
+            text-decoration: none;
+            color: aliceblue;
+            border: 2px solid aliceblue;
+            border-radius: 5px;
+        }
+        button{
+            background-color: transparent;
+            color: aliceblue;
+            border: 2px solid aliceblue;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <li><a href="/" aria-current="page">Home</a>
+        <a href="www.google.com" target="_blank">Search</a>
+    </nav>
+    <main>
+        <h4>Start should change the background color every second and stop should stop that</h4>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </main>
+</body>
+<script>
+    const randomColor = function(){
+        const hex = "0123456789ABCDEF"
+        let color = '#'
+        for(let i = 0; i < 6; i++){
+            color += hex[Math.floor(Math.random() * 16)]
+        }
+        return color
+    }
+    let intervalId
+    document.querySelector('#start').addEventListener('click',function(){
+        if (!intervalId) {
+            intervalId = setInterval( changeColor ,1000)
+        }
+        function changeColor(){
+            document.body.style.backgroundColor = randomColor()
+        }
+    })
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(intervalId)
+        intervalId = null
+    })
+</script>
+</html>

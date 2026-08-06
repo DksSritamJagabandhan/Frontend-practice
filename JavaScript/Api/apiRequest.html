@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request</title>
+    <style>
+        button{
+            padding: 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .display{
+            margin-top: 20px;
+        }
+        img{
+            width: 180px;
+            border-radius: 50%;
+        }
+        table{
+            border: 1px solid white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <div class="btn-div">
+        <button class="btn">Click here</button>
+    </div>
+    <div class="display">
+        <table>
+            <tr>
+                <td>
+                    <img class="profile" src="" alt="ProfileImage">
+                </td>
+                <td style="padding-left: 20px;">
+                    <h3 class="name"></h3>
+                    <h4 class="description"></h4>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    const btn = document.querySelector('.btn')
+    const profilePic = document.querySelector('.profile')
+    const profileName = document.querySelector('.name')
+    const description = document.querySelector('.description')
+    
+    btn.addEventListener('click',()=>{
+        const requestUrl = 'https://api.github.com/users/dkssritamjagabandhan';
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', requestUrl)
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const data = JSON.parse(this.responseText)
+
+                profilePic.src = data.avatar_url
+                profileName.innerHTML = data.login
+                description.innerHTML = `
+                    Username : ${data.login}<br>
+                    Followers : ${data.followers}<br>
+                    Bio : ${data.bio}<br>`
+            }
+        }
+        xhr.send()
+    })
+</script>
+</html>

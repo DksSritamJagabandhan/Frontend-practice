@@ -79,16 +79,16 @@ async function consumePromiseFive(){
 consumePromiseFive()
 
 
-// async function getAllUser(){
-//     try{
-//         const response =await fetch('https://api.github.com/users/dkssritamjagabandhan')
-//         const data = await response.json()
-//         console.log(data)
-//     }catch(error){
-//         console.log(error)
-//     }
-// }
-// getAllUser()
+async function getAllUser(){
+    try{
+        const response =await fetch('https://api.github.com/users/dkssritamjagabandhan')
+        const data = await response.json()
+        console.log(data)
+    }catch(error){
+        console.log(error)
+    }
+}
+getAllUser()
 
 
 fetch('https://api.github.com/users/dkssritamjagabandhan')
@@ -101,3 +101,11 @@ fetch('https://api.github.com/users/dkssritamjagabandhan')
 .catch((error)=>{
     console.log(error)
 })
+
+// response = fetch("url")
+// fetch --> web browser/node --> network request -->T--> onfulfiled[] --|
+//                                              | -->F--> onrejection[]--|
+                //                                                       |
+                //                                                  data:____
+                //                                                       |
+                //                                                   response

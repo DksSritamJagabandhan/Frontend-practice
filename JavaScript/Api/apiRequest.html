@@ -31,7 +31,7 @@
         <table>
             <tr>
                 <td>
-                    <img class="profile" src="" alt="ProfileImage">
+                    <img class="profile" src="" alt="">
                 </td>
                 <td style="padding-left: 20px;">
                     <h3 class="name"></h3>
@@ -45,6 +45,7 @@
     const btn = document.querySelector('.btn')
     const profilePic = document.querySelector('.profile')
     const profileName = document.querySelector('.name')
+    const display = document.querySelector('.display')
     const description = document.querySelector('.description')
     
     btn.addEventListener('click',()=>{
@@ -54,13 +55,13 @@
         xhr.onreadystatechange = function(){
             if (xhr.readyState === 4 && xhr.status === 200) {
                 const data = JSON.parse(this.responseText)
-
+                
                 profilePic.src = data.avatar_url
                 profileName.innerHTML = data.login
                 description.innerHTML = `
-                    Username : ${data.login}<br>
-                    Followers : ${data.followers}<br>
-                    Bio : ${data.bio}<br>`
+                    <span style="color:red">Username</span> : ${data.login}<br>
+                    <span style="color:red">Followers</span> : ${data.followers}<br>
+                    <span style="color:red">Bio</span> : ${data.bio}<br>`
             }
         }
         xhr.send()
